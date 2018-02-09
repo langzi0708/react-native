@@ -23,7 +23,7 @@ import My from '../app/pageview/My'
 import LoginPage from "../src/pages/LoginPage";
 import MainPage from "../src/pages/MainPage";
 import  Toast,{DURATION} from 'react-native-easy-toast'
-
+import WebViewTest from '../app/pageview/WebViewTest'
 export default class githubPopular extends Component {
     constructor(props) {
         super(props);
@@ -80,7 +80,7 @@ export default class githubPopular extends Component {
                         renderIcon={() => <Image style={styles.image} source={require('../res/images/ic_favorite.png')}/>}
                         renderSelectedIcon={() =><Image style={[styles.image,{tintColor:'green'}]} source={require('../res/images/ic_favorite.png')}/>}
                         onPress={() => this.setState({selectedTab: 'tb_favorite'})}>
-                        <View style={{backgroundColor: 'green',flex:1}}></View>
+                        <WebViewTest {...this.props}/>
                     </TabNavigator.Item>
                     <TabNavigator.Item
                         selected={this.state.selectedTab === 'tb_my'}
@@ -94,8 +94,6 @@ export default class githubPopular extends Component {
                     </TabNavigator.Item>
                 </TabNavigator>
                 <Toast ref={toast=>this.toast=toast}/>
-
-
 
             </View>
         );

@@ -23,13 +23,15 @@ import SortKeyPage from './app/pageview/SortKeyPage'
 import My from './app/pageview/My'
 import PopularPage from "./app/pageview/PopularPage";
 
-
-
+import WebViewTest  from './app/pageview/WebViewTest'
+import RepositoryDetail from './app/pageview/RepositoryDetail'
 const MainScreen = StackNavigator({
-    githubPopular:{screen:githubPopular},
+    githubPopular:{screen:githubPopular}, //默认第一个吧
     CustomKeypage:{screen:CustomKeypage},
     PopularPage:{screen:PopularPage},
     SortKeyPage:{screen:SortKeyPage},
+    WebViewTest:{screen:WebViewTest},
+    RepositoryDetail:{screen:RepositoryDetail},
 
 });
 //要显示那个界面就注册哪个 然后指向。

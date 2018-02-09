@@ -11,7 +11,7 @@ import {
 import  NavigationBar from '../pageview/NavigationBar'
 import Toast,{DURATION}from 'react-native-easy-toast'
 import CustomKeypage  from '../pageview/CustomKeypage'
-import SortKeyPage from '../pageview/SortKeyPage' //订阅标签页面
+import SortKeyPage from '../pageview/SortKeyPage'  //订阅标签页面
 
 export default class My extends Component<{}> {
 
@@ -39,7 +39,7 @@ export default class My extends Component<{}> {
                     style={{fontSize:20,margin:20}}
 
                     onPress={()=>{
-                        navigate('SortKeyPage',{...this.props})
+                        navigate('SortKeyPage')
                     }}
                 >
                     订阅标签
@@ -66,4 +66,4 @@ const styles = StyleSheet.create({
 
     },
 
-})
+});

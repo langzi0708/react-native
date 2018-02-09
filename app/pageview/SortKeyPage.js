@@ -8,7 +8,6 @@ import {
     TouchableOpacity,
     Alert,
     TouchableHighlight,
-
     View
 } from 'react-native';
 import LanguageDao, {FLAG_LANGUAGE} from "../../src/data/LanguageDao";

@@ -17,6 +17,7 @@ import RepositoryCell from '../RepositoryCell'
 import LanguageDao,{FLAG_LANGUAGE} from '../../src/data/LanguageDao'
 import ScrollableTabView,{ScrollableTabBar} from 'react-native-scrollable-tab-view'
 import {StackNavigator, TabNavigator} from "react-navigation"
+import RepositoryDetail from '../pageview/RepositoryDetail'
 const URL = 'https://api.github.com/search/repositories?q=';
 const QUERY_STR = '&sort=stars';
 //const Navigator = StackNavigator(RouteConfigs, StackNavigatorConfig);
@@ -174,9 +175,23 @@ class  PopularTab extends Component{
     genFetchUrl(key){
         return URL +key +QUERY_STR;
     }
+
+    onSelect(item){
+        const { navigate } = this.props.navigation;
+        navigate('RepositoryDetail',{params:{
+                ...this.props,
+                item:item,
+            }})
+
+
+    }
+
+
+
     renderRow(data){
         return(
             <RepositoryCell
+                onSelect = {()=>this.onSelect(data)}
                 key={data.id}
                 data={data}/>
         )
